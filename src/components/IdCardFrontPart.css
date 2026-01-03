@@ -25,6 +25,8 @@
     box-sizing: border-box;
 }
 
+/* Partial border */
+
 .id-card-front-container::before {
     content: '';
     position: absolute;
