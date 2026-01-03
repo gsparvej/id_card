@@ -74,17 +74,13 @@
 .border-right-bottom {
     position: absolute;
     bottom: -25px;
-    /* Offset by border width */
     right: -25px;
-    /* Offset by border width */
     width: 25px;
-    height: 10%;
-    /* Bottom 10% */
+    height: 15%;
     background-color: #291dd5;
-    /* Red partial border */
     z-index: 1;
-    border-bottom-right-radius: 8px;
-    /* Match container corner */
+    border-bottom-right-radius: 10px;
+    clip-path: polygon(0 0, 100% 70%, 100% 100%, 0 100%);
 }
 
 /* Header Section */
