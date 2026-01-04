@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .id-card-front-container {
-    width: 370px;
-    height: 550px;
+    width: 380px;
+    height: 580px;
     background-color: white;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -25,14 +25,14 @@
     top: 0;
     right: 0;
     width: 90%;
-    height: 100%;
-    background-color: #16469d;
+    height: 85%;
+    background-color: #2312a5e1;
     /* Dark Blue */
     clip-path: polygon(25% 0%, 100% 0%,
             100% 60%,
-            93% 60%,
+            100% 60%,
             /* Angled cut back up */
-            93% 5%,
+            100% 5%,
             /* Inner right vertical */
             18% 5%
             /* Inner top horizontal */
@@ -45,9 +45,9 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #16469d;
+    width: 95%;
+    height: 85%;
+    background-color: #2312a5e1;
     /* Dark Blue */
     clip-path: polygon(0% 35%,
             7% 35%,
@@ -69,9 +69,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 25px;
-    height: 70%;
-    background-color: #16469d;
+    width: 22px;
+    height: 60%;
+    background-color: #2312a5e1;
     z-index: 1;
     /* Straight rectangular strip */
 }
@@ -83,7 +83,7 @@
     right: 0;
     width: 22px;
     height: 16%;
-    background-color: #16469d;
+    background-color: #2312a5e1;
     z-index: 1;
     /* Angled top cut */
     clip-path: polygon(0% 15px, 100% 45%, 100% 100%, 0% 100%);
@@ -96,7 +96,7 @@
     right: 0;
     width: 90px;
     height: 50px;
-    background-color: #16469d;
+    background-color: #2312a5e1;
     z-index: 1;
     /* Mirrored bracket (Right edge and Bottom edge) */
     clip-path: polygon(100% 50%,
@@ -121,12 +121,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 1px;
+    gap: 2px;
 }
 
 /* Logo Image Styling */
 .hospital-logo-img {
-    width: 300px;
+    width: 320px;
     /* Adjust width to fit header area */
     height: auto;
     object-fit: contain;
@@ -160,7 +160,7 @@
 
 /* --- Photo --- */
 .photo-section {
-    width: 110%;
+    width: 100%;
     display: flex;
     justify-content: center;
     z-index: 2;
@@ -169,7 +169,7 @@
 
 .photo-placeholder {
     width: 220px;
-    height: 240px;
+    height: 255px;
     background-color: #f0f0f0;
     background-image: linear-gradient(45deg, #ddd 25%, transparent 25%),
         linear-gradient(-45deg, #ddd 25%, transparent 25%),
@@ -191,32 +191,32 @@
 .id-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-weight: 600;
+    margin-bottom: 3px;
     color: #000;
 }
 
 .person-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     line-height: 1.2;
 }
 
 .designation {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 21px;
+    font-weight: 510;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .department {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 21px;
+    font-weight: 510;
     text-transform: uppercase;
     margin-bottom: 5px;
 }
