@@ -2,7 +2,7 @@
 
 .id-card-front-container {
     width: 380px;
-    height: 580px;
+    height: 610px;
     background-color: white;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -190,9 +190,9 @@
 
 .id-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
-    margin-bottom: 3px;
+    margin-bottom: 7px;
     color: #000;
 }
 
@@ -201,7 +201,7 @@
     font-size: 22px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     line-height: 1.2;
 }
 
