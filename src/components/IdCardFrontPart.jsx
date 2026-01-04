@@ -9,6 +9,7 @@ const IdCardFrontPart = () => {
             {/* Background Shapes */}
             <div className="shape-top-right"></div>
             <div className="shape-bottom-left"></div>
+            <div className="shape-bottom-right"></div>
 
             {/* Header */}
             <div className="front-header">

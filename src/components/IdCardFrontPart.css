@@ -24,17 +24,17 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-color: #16469d;
     /* Dark Blue */
     clip-path: polygon(25% 0%, 100% 0%,
-            100% 65%,
-            93% 62%,
+            100% 60%,
+            93% 60%,
             /* Angled cut back up */
             93% 5%,
             /* Inner right vertical */
-            30% 5%
+            18% 5%
             /* Inner top horizontal */
         );
     z-index: 1;
@@ -62,47 +62,49 @@
     z-index: 1;
 }
 
-/* Bottom Right Corner Triangle */
-/* Right Vertical Borders (Top 50%, Bottom 30%) */
-.shape-bottom-right {
+/* Right Vertical Borders (Separated) */
+
+/* Top Part: 70% Height, Straight Bottom, No Corner */
+.right-border-top {
     position: absolute;
     top: 0;
     right: 0;
-    /* Right Vertical Borders (Separated) */
+    width: 25px;
+    height: 70%;
+    background-color: #16469d;
+    z-index: 1;
+    /* Straight rectangular strip */
+}
 
-    /* Top Part: 60% Height, Straight Bottom, No Corner */
-    .right-border-top {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 25px;
-        height: 60%;
-        background-color: #16469d;
-        z-index: 1;
-        /* Straight rectangular strip */
-    }
+/* Bottom Part: 30% Height, Angled Top Corner */
+.right-border-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 22px;
+    height: 16%;
+    background-color: #16469d;
+    z-index: 1;
+    /* Angled top cut */
+    clip-path: polygon(0% 15px, 100% 45%, 100% 100%, 0% 100%);
+}
 
-    /* Bottom Part: 30% Height, Angled Top Corner */
-    .right-border-bottom {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 25px;
-        height: 30%;
-        background-color: #16469d;
-        z-index: 1;
-        /* Angled top cut */
-        clip-path: polygon(0% 15px,
-                /* Start from left edge, 15px down */
-                100% 40%,
-                /* Top-right corner */
-                100% 100%,
-                /* Bottom-right */
-                0% 100%
-                /* Bottom-left */
-            );
-    }
-
+/* Bottom Right Corner Bracket Shape */
+.shape-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    height: 50px;
+    background-color: #16469d;
+    z-index: 1;
+    /* Mirrored bracket (Right edge and Bottom edge) */
+    clip-path: polygon(100% 50%,
+            100% 100%,
+            25% 100%,
+            25% 95%,
+            93% 95%,
+            93% 50%);
 }
 
 /* --- Header --- */
@@ -119,16 +121,16 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 2px;
+    gap: 1px;
 }
 
 /* Logo Image Styling */
 .hospital-logo-img {
-    width: 295px;
+    width: 300px;
     /* Adjust width to fit header area */
     height: auto;
     object-fit: contain;
-    margin-left: -30px;
+    margin-left: -50px;
     /* Slight alignment tweak */
 }
 
@@ -166,7 +168,7 @@
 }
 
 .photo-placeholder {
-    width: 230px;
+    width: 220px;
     height: 240px;
     background-color: #f0f0f0;
     background-image: linear-gradient(45deg, #ddd 25%, transparent 25%),
@@ -183,7 +185,7 @@
     z-index: 2;
     width: 100%;
     text-align: center;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 .id-label {
@@ -205,7 +207,7 @@
 
 .designation {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -213,7 +215,7 @@
 
 .department {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -222,9 +224,10 @@
 .blood-group {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 550;
     margin-bottom: 5px;
     text-transform: uppercase;
+    color: #151414e4;
 }
 
 .blood-val {
@@ -236,6 +239,7 @@
 .joining-date {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 550;
     text-transform: uppercase;
+    color: #151414e4;
 }
