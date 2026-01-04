@@ -26,7 +26,7 @@
     right: 0;
     width: 90%;
     height: 83%;
-    background-color: #085e93e8;
+    background-color: #054F90;
     /* Dark Blue */
     clip-path: polygon(25% 0%, 100% 0%,
             100% 60%,
@@ -47,7 +47,7 @@
     left: 0;
     width: 95%;
     height: 85%;
-    background-color: #085e93e8;
+    background-color: #054F90;
     /* Dark Blue */
     clip-path: polygon(0% 35%,
             7% 35%,
@@ -71,7 +71,7 @@
     right: 0;
     width: 22px;
     height: 60%;
-    background-color: #085e93e8;
+    background-color: #054F90;
     z-index: 1;
     /* Straight rectangular strip */
 }
@@ -83,7 +83,7 @@
     right: 0;
     width: 22px;
     height: 16%;
-    background-color: #085e93e8;
+    background-color: #054F90;
     z-index: 1;
     /* Angled top cut */
     clip-path: polygon(0% 15px, 100% 45%, 100% 100%, 0% 100%);
@@ -96,7 +96,7 @@
     right: 0;
     width: 90px;
     height: 50px;
-    background-color: #085e93e8;
+    background-color: #054F90;
     z-index: 1;
     /* Mirrored bracket (Right edge and Bottom edge) */
     clip-path: polygon(100% 50%,
@@ -169,7 +169,7 @@
 
 .photo-placeholder {
     width: 220px;
-    height: 255px;
+    height: 260px;
     background-color: #f0f0f0;
     background-image: linear-gradient(45deg, #ddd 25%, transparent 25%),
         linear-gradient(-45deg, #ddd 25%, transparent 25%),
@@ -192,7 +192,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
     font-weight: 600;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
     color: #000;
 }
 
@@ -218,7 +218,7 @@
     font-size: 21px;
     font-weight: 510;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .blood-group {
