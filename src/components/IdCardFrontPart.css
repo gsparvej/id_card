@@ -1,205 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .id-card-front-container {
-    width: 350px;
+    width: 370px;
     height: 550px;
-    /* Approximate height based on typical ID card aspect ratio */
     background-color: white;
     position: relative;
-    border-radius: 8px;
-    border-width: 25px;
-    border-style: solid;
-    border-top-color: transparent;
-    /* Transparent for partial border */
-    border-right-color: transparent;
-    /* Transparent for partial border */
-    border-bottom-color: #0f068f;
-    /* Light Blue */
-    border-left-color: transparent;
-    /* Transparent to show pseudo-element */
-    /* Light Blue border */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #000;
     box-sizing: border-box;
+    overflow: hidden;
+    /* Important for shapes */
+    padding: 10px;
 }
 
-/* Partial border */
+/* --- Shapes --- */
 
-.id-card-front-container::before {
-    content: '';
+/* Top Right Shape */
+.shape-top-right {
     position: absolute;
-    left: -25px;
-    bottom: -25px;
-    width: 25px;
-    height: 75%;
-    background-color: #291dd5;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #16469d;
+    /* Dark Blue */
+    clip-path: polygon(25% 0%, 100% 0%,
+            100% 65%,
+            93% 62%,
+            /* Angled cut back up */
+            93% 5%,
+            /* Inner right vertical */
+            30% 5%
+            /* Inner top horizontal */
+        );
     z-index: 1;
 }
 
-.id-card-front-container::after {
-    content: '';
+/* Bottom Left Shape */
+.shape-bottom-left {
     position: absolute;
-    top: -25px;
-    /* Offset by border width */
-    right: -25px;
-    /* Start from right */
-    height: 25px;
-    width: 80%;
-    /* 80% width */
-    background-color: #291dd5;
-    /* Top partial border color */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #16469d;
+    /* Dark Blue */
+    clip-path: polygon(0% 35%,
+            7% 35%,
+            /* Angled cut down */
+            7% 95%,
+            /* Inner left vertical */
+            100% 95%,
+            /* Inner bottom horizontal - Full Width */
+            100% 100%,
+            /* Angled cut down-right - Full Width */
+            0% 100%);
     z-index: 1;
-    border-top-right-radius: 8px;
-    /* Match container corner */
 }
 
-.border-right-partial {
+/* Bottom Right Corner Triangle */
+/* Right Vertical Borders (Top 50%, Bottom 30%) */
+.shape-bottom-right {
     position: absolute;
-    top: -25px;
-    /* Offset by border width */
-    right: -25px;
-    /* Offset by border width */
-    width: 25px;
-    height: 60%;
-    /* 60% height */
-    background-color: #291dd5;
-    /* Red partial border */
-    z-index: 1;
-    border-top-right-radius: 8px;
-    /* Match container corner */
+    top: 0;
+    right: 0;
+    /* Right Vertical Borders (Separated) */
+
+    /* Top Part: 60% Height, Straight Bottom, No Corner */
+    .right-border-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25px;
+        height: 60%;
+        background-color: #16469d;
+        z-index: 1;
+        /* Straight rectangular strip */
+    }
+
+    /* Bottom Part: 30% Height, Angled Top Corner */
+    .right-border-bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 25px;
+        height: 30%;
+        background-color: #16469d;
+        z-index: 1;
+        /* Angled top cut */
+        clip-path: polygon(0% 15px,
+                /* Start from left edge, 15px down */
+                100% 40%,
+                /* Top-right corner */
+                100% 100%,
+                /* Bottom-right */
+                0% 100%
+                /* Bottom-left */
+            );
+    }
+
 }
 
-.border-right-bottom {
-    position: absolute;
-    bottom: -25px;
-    right: -25px;
-    width: 25px;
-    height: 15%;
-    background-color: #291dd5;
-    z-index: 1;
-    border-bottom-right-radius: 10px;
-    clip-path: polygon(0 0, 100% 70%, 100% 100%, 0 100%);
-}
-
-/* Header Section */
+/* --- Header --- */
 .front-header {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 90%;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
     z-index: 2;
+    padding-left: 2px;
+    /* Slight offset from left border */
+}
+
+.logo-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2px;
+}
+
+/* Logo Image Styling */
+.hospital-logo-img {
+    width: 295px;
+    /* Adjust width to fit header area */
+    height: auto;
+    object-fit: contain;
+    margin-left: -30px;
+    /* Slight alignment tweak */
+}
+
+/* Hide old text titles as we replaced them with the logo image */
+.hospital-title-front {
+    display: none;
+}
+
+.logo-circle {
+    display: none;
+    /* Hide old circle logo */
 }
 
 .logo-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5px;
+    width: 110%;
 }
 
-/* Placeholder for Logo Circle */
-.logo-circle {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #0b4a99;
-    /* Blue ring */
-    border-radius: 50%;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0b4a99;
-    font-weight: bold;
-    font-size: 10px;
-}
-
-.hospital-title-front {
-    text-align: left;
-}
-
-.hospital-name-main {
-    color: #0b4a99;
-    /* Blue */
-    font-size: 20px;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1;
-    margin: 0;
-}
-
-.hospital-subtitle {
-    color: #00aeef;
-    /* Light Blue */
-    font-size: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .address-front {
     font-size: 10px;
-    margin-top: 2px;
     color: #000;
+    font-weight: 500;
 }
 
-/* Photo Section */
+/* --- Photo --- */
+.photo-section {
+    width: 110%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    margin-bottom: 5px;
+}
+
 .photo-placeholder {
-    width: 150px;
-    height: 180px;
-    background-color: #eee;
-    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
-        linear-gradient(-45deg, #ccc 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #ccc 75%),
-        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    width: 230px;
+    height: 240px;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(45deg, #ddd 25%, transparent 25%),
+        linear-gradient(-45deg, #ddd 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ddd 75%),
+        linear-gradient(-45deg, transparent 75%, #ddd 75%);
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    z-index: 2;
+    /* No border on photo in design, maybe just faint one */
 }
 
-/* Details Section */
+/* --- Details --- */
 .details-section {
     z-index: 2;
     width: 100%;
+    text-align: center;
+    color: black;
 }
 
 .id-label {
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
 }
 
 .person-name {
-    font-weight: 900;
-    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .designation {
-    font-size: 16px;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 2px;
-}
-
-.department {
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.blood-group,
-.joining-date {
-    font-size: 14px;
-    font-weight: bold;
     margin-bottom: 5px;
 }
 
+.department {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.blood-group {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
 .blood-val {
-    color: #c00000;
+    font-family: 'Montserrat', sans-serif;
+    color: #e30613;
     /* Red */
+}
+
+.joining-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
